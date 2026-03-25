@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Education | AllergyCare Clinic</title>
+    <meta name="description"
+        content="Downloadable asthma action plans, allergen avoidance guides, and instructional videos for AllergyCare patients.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' }, darkBg: '#0f172a', darkCard: '#1e293b' }, fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] } }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-slate-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header
+        class="fixed w-full top-0 z-50 glass transition-colors duration-300 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <img src="assets/images/logo.png" alt="AllergyCare Logo"
+                            class="w-10 h-10 transition-transform group-hover:scale-110">
+                        <span class="font-heading font-bold text-2xl text-slate-900 dark:text-white">Allergy<span
+                                class="text-primary-600">Care</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden xl:flex items-center space-x-1">
+                    <a href="index.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Home</a>
+                    <a href="home-2.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Home
+                        2</a>
+                    <a href="education.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-slate-800 transition-colors">Treated</a>
+                    <a href="services.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Services</a>
+                    <a href="about.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">About</a>
+                    <a href="contact.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Contact</a>
+                    <a href="dashboard.html"
+                        class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Patient</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="hidden xl:flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+                        aria-label="Toggle Dark Mode">
+                        <i id="theme-toggle-icon" class="fas fa-moon text-slate-700 dark:text-slate-300 text-xl"></i>
+                    </button>
+                    <a href="signup.html"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-400 transition-colors">Sign
+                        Up</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex xl:hidden items-center space-x-4">
+                    <button id="mobile-menu-btn"
+                        class="text-slate-900 dark:text-white hover:text-primary-600 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Slide-in Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-80 bg-white dark:bg-darkCard shadow-2xl z-[60] flex flex-col h-screen transform transition-transform duration-300 border-l border-slate-100 dark:border-slate-800 translate-x-full">
+        <div class="flex items-center justify-between p-5 border-b border-gray-100 dark:border-gray-800">
+            <span class="font-heading font-bold text-xl text-slate-900 dark:text-white">Allergy<span
+                    class="text-primary-600">Care</span></span>
+            <button id="close-menu-btn"
+                class="text-slate-500 hover:text-red-500 dark:text-slate-400 focus:outline-none p-2">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto py-4 px-5 flex flex-col gap-2">
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">Home</a>
+            <a href="home-2.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">Home
+                2</a>
+            <a href="education.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium bg-primary-50 text-primary-600 dark:bg-slate-800 dark:text-primary-400 transition-colors">Treated</a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">Services</a>
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">About</a>
+            <a href="contact.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">Contact</a>
+            <a href="dashboard.html"
+                class="block px-4 py-3 rounded-xl text-base font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors">Patient</a>
+
+            <div class="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
+                <a href="signup.html"
+                    class="block w-full text-center px-4 py-3 rounded-xl text-base font-medium bg-slate-100 text-slate-800 hover:bg-slate-200 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700 transition-colors mb-3">Sign
+                    Up</a>
+            </div>
+
+            <div class="mt-auto pt-6 flex justify-center pb-4">
+                <button id="theme-toggle-mobile"
+                    class="flex items-center gap-2 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+                    aria-label="Toggle Dark Mode">
+                    <i id="theme-toggle-mobile-icon" class="fas fa-moon text-slate-700 dark:text-slate-300 text-xl"></i>
+                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Toggle Theme</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[55] hidden transition-opacity">
+    </div>
+
+    <!-- Main -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative bg-indigo-900 overflow-hidden py-16 lg:py-24 border-b-8 border-primary-500">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                    alt="Books and study" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 text-center fade-in-up">
+                <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-white mb-4">Patient Learning Center
+                </h1>
+                <p class="text-xl text-primary-100 max-w-2xl mx-auto">Knowledge is medicine. Access our library of
+                    downloadable guides, glossaries, and instructional videos.</p>
+            </div>
+        </section>
+
+        <!-- Common Conditions Section -->
+        <section class="py-20 bg-white dark:bg-darkBg relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-primary-50 dark:bg-primary-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-50 dark:bg-emerald-900/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 opacity-50">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-black uppercase tracking-widest mb-4">Patient
+                        Education</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+                        Common Allergic Conditions</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">Understanding your condition
+                        is the first step toward effective management and lasting relief.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Chronic Sinusitis -->
+                    <div
+                        class="group bg-white dark:bg-darkCard rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 hover:-translate-y-2">
+                        <div class="h-56 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800"
+                                alt="Sinus cavities illustration"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="text-white font-heading font-black text-xl">Sinusitis</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3">Chronic
+                                Sinusitis</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Learn how
+                                underlying allergies can lead to persistent sinus inflammation, and discover effective,
+                                long-term treatments.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold text-sm group/btn">
+                                Read More <i
+                                    class="fas fa-arrow-right transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Allergic Conjunctivitis -->
+                    <div
+                        class="group bg-white dark:bg-darkCard rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 hover:-translate-y-2">
+                        <div class="h-56 relative overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/90/65/9b/90659befa9c7656ab96366868e92f11d.jpg"
+                                alt="Allergic Conjunctivitis eye close-up"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="text-white font-heading font-black text-xl">Eye Allergy</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3">Allergic
+                                Conjunctivitis</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Itchy, red,
+                                watery eyes are a common frustration. We can help pinpoint the cause and provide
+                                targeted relief.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold text-sm group/btn">
+                                Read More <i
+                                    class="fas fa-arrow-right transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Dermatitis -->
+                    <div
+                        class="group bg-white dark:bg-darkCard rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 hover:-translate-y-2">
+                        <div class="h-56 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800"
+                                alt="Contact Dermatitis rash"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="text-white font-heading font-black text-xl">Skin Rash</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3">Contact
+                                Dermatitis</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Find out if your
+                                skin rashes are caused by common contact allergens like nickel, fragrances, or
+                                preservatives.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold text-sm group/btn">
+                                Read More <i
+                                    class="fas fa-arrow-right transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Urticaria (Hives) -->
+                    <div
+                        class="group bg-white dark:bg-darkCard rounded-[2rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-500 hover:-translate-y-2">
+                        <div class="h-56 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
+                                alt="Urticaria hives close-up"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="text-white font-heading font-black text-xl">Hives</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3">Urticaria
+                                (Hives)</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">For chronic hives
+                                without a clear cause, we investigate autoimmune triggers and provide advanced
+                                therapies.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-bold text-sm group/btn">
+                                Read More <i
+                                    class="fas fa-arrow-right transition-transform group-hover/btn:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Plan Library -->
+            <section class="py-16 bg-white dark:bg-darkBg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div
+                            class="w-14 h-14 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mb-6">
+                            <img src="assets/images/video_resources.png" alt="Video Icon" class="w-8 h-8">
+                        </div>
+                        <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">Action Plan Library
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="border border-slate-200 dark:border-slate-800 rounded-xl p-5 flex justify-between items-center hover:shadow-lg transition-shadow bg-slate-50 dark:bg-darkCard group">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1">Anaphylaxis Emergency Plan
+                                </h3>
+                                <p class="text-xs text-slate-500">Provided by FARE (Food Allergy Research)</p>
+                            </div>
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border-2 border-primary-500 text-primary-500 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div
+                            class="border border-slate-200 dark:border-slate-800 rounded-xl p-5 flex justify-between items-center hover:shadow-lg transition-shadow bg-slate-50 dark:bg-darkCard group">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1">Asthma Action Plan (Adult)
+                                </h3>
+                                <p class="text-xs text-slate-500">Standard Green/Yellow/Red zone guide</p>
+                            </div>
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border-2 border-primary-500 text-primary-500 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div
+                            class="border border-slate-200 dark:border-slate-800 rounded-xl p-5 flex justify-between items-center hover:shadow-lg transition-shadow bg-slate-50 dark:bg-darkCard group">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1">School Medication Form</h3>
+                                <p class="text-xs text-slate-500">Required form for school nurses</p>
+                            </div>
+                            <button
+                                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border-2 border-primary-500 text-primary-500 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How To Videos & Guides -->
+            <section class="py-16 bg-slate-50 dark:bg-slate-900/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row gap-12">
+
+                        <!-- Videos -->
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div
+                                    class="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-6">
+                                    <img src="assets/images/paperwork.png" alt="Action Plan Icon" class="w-8 h-8">
+                                </div>
+                                <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">How-To Videos
+                                </h2>
+                            </div>
+                            <div class="grid grid-cols-1 gap-6">
+                                <!-- EpiPen Video -->
+                                <div
+                                    class="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer border border-slate-200 dark:border-slate-800 h-56">
+                                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="Injection" class="w-full h-full object-cover">
+                                    <div
+                                        class="absolute inset-0 bg-slate-900/50 flex flex-col items-center justify-center p-4">
+                                        <div
+                                            class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform mb-3">
+                                            <i class="fas fa-play text-white text-xl ml-1"></i>
+                                        </div>
+                                        <h3 class="font-bold text-white text-lg text-center">How to use an EpiPen®
+                                            Auto-Injector</h3>
+                                    </div>
+                                </div>
+                                <!-- Inhaler Video -->
+                                <div
+                                    class="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer border border-slate-200 dark:border-slate-800 h-56">
+                                    <img src="https://myhealthstyle.com.au/blogs/news/maximizing-medication-effectiveness-when-to-use-inhaler-spacers?srsltid=AfmBOopebSHT-69vKm5LhX7fGLiOMihCwNTDNi6PPfWXlk7h_tuOdC18"
+                                        alt="Breathing" class="w-full h-full object-cover">
+                                    <div
+                                        class="absolute inset-0 bg-slate-900/50 flex flex-col items-center justify-center p-4">
+                                        <div
+                                            class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform mb-3">
+                                            <i class="fas fa-play text-white text-xl ml-1"></i>
+                                        </div>
+                                        <h3 class="font-bold text-white text-lg text-center">Proper Inhaler & Spacer
+                                            Technique</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Avoidance Guides -->
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div
+                                    class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center text-xl">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">Allergen
+                                    Avoidance</h2>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+                                <p class="text-slate-600 dark:text-slate-400 mb-6">Practical tips for reducing exposure
+                                    to
+                                    common environmental triggers at home.</p>
+
+                                <ul class="space-y-4">
+                                    <li id="dust-mites" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Dust Mites</h4>
+                                            <p class="text-sm text-slate-500 mb-2">Dust mites thrive in humid
+                                                environments
+                                                and shed proteins that trigger year-round allergies.</p>
+                                            <div
+                                                class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+                                                <div>
+                                                    <h5
+                                                        class="text-xs font-bold text-primary-600 uppercase tracking-wider mb-2">
+                                                        5 Proven Removal Ways</h5>
+                                                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                        <li>• <strong
+                                                                class="text-slate-700 dark:text-slate-300">Allergen-Proof
+                                                                Bed Covers:</strong> Encase mattress & pillows.</li>
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Hot
+                                                                Wash
+                                                                Weekly:</strong> Use 130°F (54°C) water for bedding.
+                                                        </li>
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Low
+                                                                Humidity:</strong> Maintain 30%–50% using A/C or
+                                                            dehumidifiers.</li>
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">HEPA
+                                                                Vacuuming:</strong> Vacuum daily & wet mop hard floors.
+                                                        </li>
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Steam
+                                                                Cleaning:</strong> Deep clean carpets and furniture.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5
+                                                        class="text-xs font-bold text-primary-600 uppercase tracking-wider mb-2">
+                                                        Symptoms (Mild to Severe)</h5>
+                                                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                        <li>• Sneezing & nasal congestion</li>
+                                                        <li>• Itchy, watery eyes</li>
+                                                        <li>• Facial pressure & chronic coughing</li>
+                                                        <li>• Asthma attacks & chest tightness</li>
+                                                        <li>• Difficulty breathing or wheezing</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <p class="text-xs text-emerald-600 dark:text-emerald-400 mt-2 font-medium">
+                                                <i class="fas fa-info-circle mr-1"></i> Tip: Avoid using attic/window
+                                                fans
+                                                as they pull in more outdoor allergens.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-cat"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Pet Dander</h4>
+                                            <p class="text-sm text-slate-500">Keep pets out of the bedroom entirely. Use
+                                                HEPA air purifiers in main living areas.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Indoor Mold</h4>
+                                            <p class="text-sm text-slate-500">Keep indoor humidity below 50%. Promptly
+                                                fix
+                                                any leaks and clean bathroom surfaces regularly.</p>
+                                        </div>
+                                    </li>
+                                    <li id="pollen" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-tree"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Pollen & Hay Fever</h4>
+                                            <p class="text-sm text-slate-500 mb-2">Seasonal pollen impacts can reduce
+                                                lung
+                                                capacity and worsen chronic conditions like Asthma and COPD.</p>
+                                            <div
+                                                class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-xl border border-indigo-100 dark:border-indigo-900/30">
+                                                <h5
+                                                    class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-2">
+                                                    Respiratory Health Risks</h5>
+                                                <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">Pollen causes
+                                                    airway inflammation, leading to increased mucus, wheezing, and
+                                                    higher
+                                                    susceptibility to lung infections.</p>
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Outdoor
+                                                                Avoidance:</strong> Keep windows closed on high pollen
+                                                            days.
+                                                        </li>
+                                                        <li>• <strong
+                                                                class="text-slate-700 dark:text-slate-300">Hygiene:</strong>
+                                                            Shower before bed to remove pollen from hair.</li>
+                                                    </ul>
+                                                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Air
+                                                                Purification:</strong> Use personal/portable HEPA
+                                                            filters.
+                                                        </li>
+                                                        <li>• <strong class="text-slate-700 dark:text-slate-300">Ionic
+                                                                Technology:</strong> Consider negative ion cleaners to
+                                                            clear
+                                                            the breathing zone.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="insect-sting" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Insect Sting Allergy
+                                            </h4>
+                                            <p class="text-sm text-slate-500">Reactions to bee, wasp, and fire ant
+                                                stings
+                                                can be severe. Learn about <strong class="text-primary-600">venom
+                                                    immunotherapy</strong> as a protective measure to reduce future
+                                                reaction
+                                                risks.</p>
+                                        </div>
+                                    </li>
+                                    <li id="drug-allergy" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-capsules"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Drug Allergy</h4>
+                                            <p class="text-sm text-slate-500 mb-2">Adverse reactions to medications like
+                                                penicillin can be complex. We help distinguish true IgE-mediated
+                                                allergies
+                                                from common side effects.</p>
+                                            <div
+                                                class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div>
+                                                        <h5
+                                                            class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-2 text-primary-600">
+                                                            Allergy vs. Side Effect</h5>
+                                                        <ul
+                                                            class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                            <li>• <strong
+                                                                    class="text-slate-700 dark:text-slate-300">True
+                                                                    Allergy:</strong> Hives, facial swelling, wheezing,
+                                                                or
+                                                                anaphylaxis.</li>
+                                                            <li>• <strong
+                                                                    class="text-slate-700 dark:text-slate-300">Side
+                                                                    Effect:</strong> Nausea, headache, or mild stomach
+                                                                upset.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h5
+                                                            class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-2 text-primary-600">
+                                                            Our Solutions</h5>
+                                                        <ul
+                                                            class="text-xs text-slate-600 dark:text-slate-400 space-y-1">
+                                                            <li>• <strong
+                                                                    class="text-slate-700 dark:text-slate-300">Drug
+                                                                    Challenges:</strong> Safe, supervised in-office
+                                                                testing.
+                                                            </li>
+                                                            <li>• <strong
+                                                                    class="text-slate-700 dark:text-slate-300">Desensitisation:</strong>
+                                                                Temporary tolerance building for essential meds.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="advanced-asthma" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-lungs"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Advanced Asthma Care
+                                            </h4>
+                                            <p class="text-sm text-slate-500">Explore how <strong
+                                                    class="text-primary-600">biologic therapies</strong> can offer new
+                                                hope
+                                                for individuals with severe, uncontrolled asthma by targeting specific
+                                                inflammatory pathways.</p>
+                                        </div>
+                                    </li>
+                                    <li id="immunology" class="flex gap-4 items-start">
+                                        <div
+                                            class="mt-1 w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas fa-microscope"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white">Immunology Insights
+                                            </h4>
+                                            <p class="text-sm text-slate-500">Understand your body's defense system and
+                                                how
+                                                primary immunodeficiency disorders are diagnosed and managed through
+                                                comprehensive immune evaluations.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Glossary Stub -->
+            <section class="py-16 bg-white dark:bg-darkBg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-10">
+                        <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white mb-2">Medical Glossary
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400">Demystifying common immunological terms.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
+                        <!-- Term 1 -->
+                        <div>
+                            <h4 class="font-bold text-primary-600 dark:text-primary-400 text-lg mb-1">Anaphylaxis</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">A severe, potentially life-threatening
+                                allergic reaction that can affect multiple organ systems and requires immediate
+                                administration of epinephrine.</p>
+                        </div>
+                        <!-- Term 2 -->
+                        <div>
+                            <h4 class="font-bold text-primary-600 dark:text-primary-400 text-lg mb-1">Histamine</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">A chemical released by white blood
+                                cells
+                                into the bloodstream when the immune system is defending against a potential allergen.
+                            </p>
+                        </div>
+                        <!-- Term 3 -->
+                        <div>
+                            <h4 class="font-bold text-primary-600 dark:text-primary-400 text-lg mb-1">IgE
+                                (Immunoglobulin E)
+                            </h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">Antibodies produced by the immune
+                                system.
+                                If you have an allergy, your immune system overreacts to an allergen by producing
+                                specific
+                                IgE antibodies.</p>
+                        </div>
+                        <!-- Term 4 -->
+                        <div>
+                            <h4 class="font-bold text-primary-600 dark:text-primary-400 text-lg mb-1">Biologic</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">A medication manufactured in a living
+                                system (like a microorganism) that targets very specific pathways of the cellular immune
+                                response.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Allergy Education Section -->
+            <section class="py-16 md:py-24 bg-white dark:bg-slate-900/50" id="education">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Know
+                            Your Triggers</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">Delve deeper into specific and complex
+                            allergic conditions to better understand your body's unique responses.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Card 1: Latex Allergy -->
+                        <div id="latex"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="assets/images/latex_allergy.png"
+                                    alt="Medical gloves representing latex allergy"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Latex
+                                    Allergy
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Often seen in healthcare workers,
+                                    this
+                                    allergy to natural rubber latex can cause reactions from skin redness to
+                                    anaphylaxis.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 2: Chronic Sinusitis -->
+                        <div id="sinusitis"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?q=80&w=2073&auto=format&fit=crop"
+                                    alt="Person experiencing sinus pressure"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Chronic
+                                    Sinusitis</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Learn how underlying allergies can
+                                    lead
+                                    to persistent sinus inflammation and discover effective, long-term treatments.</p>
+                            </div>
+                        </div>
+                        <!-- Card 3: Allergic Conjunctivitis -->
+                        <div id="conjunctivitis"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="assets/images/eye_allergy.png"
+                                    alt="Close-up of an irritated eye"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Allergic
+                                    Conjunctivitis</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Itchy, red, watery eyes are a
+                                    common
+                                    frustration. We can help pinpoint the cause and provide targeted relief.</p>
+                            </div>
+                        </div>
+                        <!-- Card 4: Exercise-Induced Anaphylaxis -->
+                        <div id="exercise-anaphylaxis"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Person running, representing exercise"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">
+                                    Exercise-Induced Anaphylaxis</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">A rare condition where allergic
+                                    symptoms arise during physical activity, sometimes only after eating specific foods.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                        <!-- Card 5: Contact Dermatitis -->
+                        <div id="dermatitis"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="assets/images/dermatitis.png"
+                                    alt="Hands with a skin rash"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Contact
+                                    Dermatitis</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Find out if your skin rashes are
+                                    caused
+                                    by common contact allergens like nickel, fragrances, or preservatives.</p>
+                            </div>
+                        </div>
+                        <!-- Card 6: Urticaria (Hives) -->
+                        <div id="hives"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="assets/images/hives.png"
+                                    alt="Skin with hives"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Urticaria
+                                    (Hives)</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">For chronic hives without a clear
+                                    cause, we investigate autoimmune triggers and provide advanced therapies.</p>
+                            </div>
+                        </div>
+                        <!-- Card 7: Oral Allergy Syndrome -->
+                        <div id="oral-allergy"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Fresh fruits, related to oral allergy syndrome"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">Oral
+                                    Allergy
+                                    Syndrome</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">An itchy mouth after eating
+                                    certain
+                                    raw fruits or vegetables? It may be a cross-reaction to pollen allergies.</p>
+                            </div>
+                        </div>
+                        <!-- Card 8: Eosinophilic Esophagitis -->
+                        <div id="eoe"
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                            <div class="overflow-hidden h-56">
+                                <img src="assets/images/esophagitis.png"
+                                    alt="Person with esophagitis discomfort"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">
+                                    Eosinophilic
+                                    Esophagitis (EoE)</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">An immune condition triggered by
+                                    food
+                                    allergens causing inflammation of the esophagus and difficulty swallowing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Treatment Process Section -->
+            <section class="py-16 md:py-24 bg-slate-50 dark:bg-darkBg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our
+                            Treatment Protocol</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">We employ a systematic and evidence-based
+                            protocol to ensure every patient receives comprehensive and effective care.</p>
+                    </div>
+                    <div class="relative">
+                        <!-- Dotted Line for Desktop -->
+                        <div
+                            class="hidden md:block absolute top-1/2 -translate-y-1/2 left-0 right-0 h-0.5 bg-slate-200 dark:bg-slate-700">
+                            <svg width="100%" height="100%">
+                                <line x1="0" y1="0" x2="100%" y2="0" stroke-dasharray="8, 8" stroke-width="2"
+                                    class="stroke-slate-300 dark:stroke-slate-600" />
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
+                            <!-- Step 1: Comprehensive Assessment -->
+                            <div class="text-center flex flex-col items-center">
+                                <div
+                                    class="mb-5 w-24 h-24 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center text-primary-500 shadow-lg relative z-10">
+                                    <i class="fas fa-clipboard-list text-4xl"></i>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">1.
+                                    Comprehensive Assessment</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm px-4">The journey begins with a
+                                    thorough review of medical records and a detailed patient interview.</p>
+                            </div>
+                            <!-- Step 2: Advanced Diagnostics -->
+                            <div class="text-center flex flex-col items-center">
+                                <div
+                                    class="mb-5 w-24 h-24 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center text-primary-500 shadow-lg relative z-10">
+                                    <i class="fas fa-vial-virus text-4xl"></i>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">2.
+                                    Advanced
+                                    Diagnostics</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm px-4">We perform skin, blood, and
+                                    lung
+                                    function tests as needed to get a clear diagnostic picture.</p>
+                            </div>
+                            <!-- Step 3: Tailored Therapeutic Plan -->
+                            <div class="text-center flex flex-col items-center">
+                                <div
+                                    class="mb-5 w-24 h-24 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center text-primary-500 shadow-lg relative z-10">
+                                    <i class="fas fa-notes-medical text-4xl"></i>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">3.
+                                    Tailored
+                                    Therapeutics</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm px-4">Based on results, a plan is
+                                    built, incorporating avoidance strategies, medications, or immunotherapy.</p>
+                            </div>
+                            <!-- Step 4: Education & Follow-Up -->
+                            <div class="text-center flex flex-col items-center">
+                                <div
+                                    class="mb-5 w-24 h-24 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center text-primary-500 shadow-lg relative z-10">
+                                    <i class="fas fa-book-medical text-4xl"></i>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-slate-800 dark:text-white mb-2">4.
+                                    Education
+                                    & Follow-Up</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm px-4">We ensure you understand your
+                                    plan and schedule regular follow-ups to monitor progress and adjust as needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patient Testimonials Section -->
+            <section class="py-16 md:py-24 bg-white dark:bg-slate-900/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                            Success
+                            Stories</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">These stories highlight the life-changing
+                            impact of accurate diagnosis and dedicated, personalized treatment.</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Testimonial 1 -->
+                        <div
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]">
+                            <div class="flex items-center mb-4">
+                                <img class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-primary-200 dark:border-primary-700"
+                                    src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Patient Jessica P.">
+                                <div>
+                                    <h4 class="font-heading font-bold text-lg text-slate-800 dark:text-white">Jessica P.
+                                    </h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 italic">"I was diagnosed with Eosinophilic
+                                Esophagitis and struggled to eat. The dietary elimination process was tough, but the
+                                clinic's dietitian was a huge help. I can finally eat without pain."</p>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]">
+                            <div class="flex items-center mb-4">
+                                <img class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-primary-200 dark:border-primary-700"
+                                    src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Patient Tom F.">
+                                <div>
+                                    <h4 class="font-heading font-bold text-lg text-slate-800 dark:text-white">Tom F.
+                                    </h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 italic">"My chronic hives (urticaria) were a
+                                mystery for years. Dr. Evans diagnosed it and started me on a biologic that has
+                                completely
+                                cleared my skin. I have my confidence back."</p>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div
+                            class="bg-slate-50 dark:bg-darkCard rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.02]">
+                            <div class="flex items-center mb-4">
+                                <img class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-primary-200 dark:border-primary-700"
+                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Patient Karen S.">
+                                <div>
+                                    <h4 class="font-heading font-bold text-lg text-slate-800 dark:text-white">Karen S.
+                                    </h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 italic">"The educational resources provided by
+                                the
+                                clinic were fantastic. The 'how-to' video for my son's inhaler was clear and easy to
+                                follow,
+                                much better than just reading a pamphlet."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- External Resources -->
+            <section class="py-12 bg-slate-900 text-white border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h3 class="font-heading text-xl font-bold mb-6">Trusted External Resources</h3>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#"
+                            class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors border border-white/10 font-medium tracking-wide">CDC
+                            Asthma Resources</a>
+                        <a href="#"
+                            class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors border border-white/10 font-medium tracking-wide">FARE
+                            (Food Allergy)</a>
+                        <a href="#"
+                            class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors border border-white/10 font-medium tracking-wide">AAAAI
+                            Conditions</a>
+                    </div>
+                </div>
+            </section>
+
+    </main>
+
+    <!-- Simple footer to save space -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-lungs text-primary-500 text-2xl"></i>
+                        <span class="font-heading font-bold text-xl text-white">Allergy<span
+                                class="text-primary-500">Care</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 mb-4">
+                        Providing comprehensive, evidence-based care for allergies, asthma, and immunological disorders.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-primary-400 transition-colors">Our Team</a></li>
+                        <li><a href="services.html" class="hover:text-primary-400 transition-colors">Services &
+                                Testing</a></li>
+                        <li><a href="conditions.html" class="hover:text-primary-400 transition-colors">Conditions
+                                Treated</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-400 transition-colors">Contact &
+                                Locations</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-4">Patient Portal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="signup.html" class="hover:text-primary-400 transition-colors">New Patient
+                                Registration</a></li>
+                        <li><a href="dashboard.html" class="hover:text-primary-400 transition-colors">Login to
+                                Portal</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Pay Bill</a></li>
+                        <li><a href="education.html" class="hover:text-primary-400 transition-colors">Patient
+                                Education</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-4">Important</h3>
+                    <p class="text-sm text-slate-400 mb-4">
+                        This site is for informational purposes only. In case of emergency (anaphylaxis), call 911.
+                    </p>
+                    <a href="contact.html"
+                        class="inline-block bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-sm transition-colors border border-slate-700">
+                        Refer a Patient (Doctors)
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 AllergyCare Clinic. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">HIPAA Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

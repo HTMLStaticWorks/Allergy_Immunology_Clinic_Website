@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal | AllergyCare Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: { colors: { primary: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' }, darkBg: '#0f172a', darkCard: '#1e293b' }, fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] } }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-slate-200 transition-colors duration-300 font-sans antialiased flex h-screen overflow-hidden">
+
+    <!-- Mobile Header (Dashboard Specific) -->
+    <div class="lg:hidden fixed top-0 w-full z-50 bg-white dark:bg-darkCard border-b border-slate-100 dark:border-slate-800 flex justify-between items-center px-6 h-16">
+        <a href="index.html" class="flex items-center gap-2">
+            <img src="assets/images/logo.png" alt="AllergyCare Logo" class="w-8 h-8">
+            <span class="font-heading font-bold text-xl text-slate-900 dark:text-white">Allergy<span class="text-primary-600">Care</span></span>
+        </a>
+        <button id="mobile-menu-btn" title="Open Sidebar" class="text-slate-900 dark:text-white focus:outline-none p-2">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="w-64 bg-white dark:bg-darkCard border-r border-slate-200 dark:border-slate-800 flex-shrink-0 flex flex-col h-full transform -translate-x-full md:translate-x-0 absolute md:relative z-40 transition-transform duration-300">
+        <div class="h-20 flex items-center justify-between px-6 border-b border-slate-100 dark:border-slate-800 md:justify-start pt-16 md:pt-0">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/images/logo.png" alt="AllergyCare Logo" class="w-8 h-8">
+                <span class="font-heading font-bold text-xl text-slate-900 dark:text-white">Allergy<span class="text-primary-600">Care</span></span>
+            </a>
+            <button id="close-sidebar-btn" class="md:hidden text-slate-500 hover:text-red-500 focus:outline-none p-2"><i class="fas fa-times text-xl"></i></button>
+        </div>
+        
+        <div class="px-6 py-6 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/150?img=11" alt="Patient Face" class="w-12 h-12 rounded-full border-2 border-primary-500 object-cover">
+                <div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Sarah Johnson</h3>
+                    <p class="text-xs text-slate-500">DOB: 10/12/1985</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+            <a href="#" data-view="overview" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-50 text-primary-700 dark:bg-slate-800 dark:text-primary-400 font-medium font-heading">
+                <i class="fas fa-home w-5 text-center"></i> Overview
+            </a>
+            <a href="#" data-view="appointments" class="nav-link flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200 transition-colors font-medium font-heading">
+                <div class="flex items-center gap-3"><i class="fas fa-calendar-alt w-5 text-center"></i> Appointments</div>
+                <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs py-0.5 px-2 rounded-full">1</span>
+            </a>
+            <a href="#" data-view="labs" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200 transition-colors font-medium font-heading">
+                <i class="fas fa-vial w-5 text-center"></i> Lab Results
+            </a>
+            <a href="#" data-view="prescriptions" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200 transition-colors font-medium font-heading">
+                <i class="fas fa-prescription-bottle-alt w-5 text-center"></i> Prescriptions
+            </a>
+            <a href="#" data-view="messages" class="nav-link flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200 transition-colors font-medium font-heading">
+                <div class="flex items-center gap-3"><i class="fas fa-envelope w-5 text-center"></i> Messages</div>
+            </a>
+            <a href="#" data-view="billing" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200 transition-colors font-medium font-heading">
+                <i class="fas fa-file-invoice-dollar w-5 text-center"></i> Billing & Insurance
+            </a>
+        </nav>
+
+        <div class="p-4 border-t border-slate-100 dark:border-slate-800">
+            <button id="theme-toggle-sidebar" title="Toggle Theme"
+                class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                <i id="theme-toggle-sidebar-icon" class="fas fa-moon"></i> Toggle Theme
+            </button>
+            <a href="index.html" title="Log Out"
+                class="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 z-30 hidden md:hidden"></div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 bg-slate-50 dark:bg-darkBg overflow-y-auto pt-16 md:pt-0">
+        <div class="p-6 md:p-8 max-w-6xl mx-auto space-y-8">
+            
+            <!-- View Dashboard (Overview) -->
+            <div id="view-overview" class="dashboard-view space-y-8">
+                <!-- Welcome Hero -->
+            <div class="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 rounded-[2.5rem] p-8 md:p-12 text-white shadow-2xl shadow-primary-500/20">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-400/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold uppercase tracking-wider mb-4">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Patient Portal Active
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-3">Welcome back, Sarah!</h1>
+                        <p class="text-primary-100 text-lg md:text-xl max-w-xl">Your health journey is on track. You have one appointment tomorrow and new laboratory results to review.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-primary-600 hover:bg-primary-50 px-6 py-3 rounded-2xl font-bold shadow-xl transition-all flex items-center gap-2 transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-plus-circle"></i> Book Appointment
+                        </button>
+                        <button class="bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white px-6 py-3 rounded-2xl font-bold transition-all flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> Message Dr. Chen
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats/Alerts -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Upcoming Appt -->
+                <div class="group bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-50 dark:bg-primary-900/10 rounded-full group-hover:scale-110 transition-transform"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-2xl shadow-inner">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <span class="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">Tomorrow</span>
+                    </div>
+                    <h3 class="text-slate-500 dark:text-slate-400 font-bold text-sm mb-1 uppercase tracking-tight">Immunotherapy Session</h3>
+                    <p class="text-2xl font-heading font-black text-slate-900 dark:text-white mb-2 leading-tight">10:00 AM</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-2"><i class="fas fa-user-md text-primary-500"></i> Dr. Jenkins, Main Clinic</p>
+                    <div class="mt-8 flex gap-4">
+                        <button class="flex-1 bg-slate-50 dark:bg-slate-800/50 hover:bg-primary-50 dark:hover:bg-primary-900/20 text-primary-600 dark:text-primary-400 py-3 rounded-xl text-sm font-bold transition-colors">Reschedule</button>
+                        <button class="px-4 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 py-3 rounded-xl text-sm font-bold hover:bg-primary-100 transition-colors" title="Add to Calendar"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Recent Lab -->
+                <div class="group bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-50 dark:bg-emerald-900/10 rounded-full group-hover:scale-110 transition-transform"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl shadow-inner">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">New Result</span>
+                    </div>
+                    <h3 class="text-slate-500 dark:text-slate-400 font-bold text-sm mb-1 uppercase tracking-tight">IgE Blood Test</h3>
+                    <p class="text-2xl font-heading font-black text-slate-900 dark:text-white mb-2 leading-tight">Normal Levels</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> Oct 12, 2023</p>
+                    <div class="mt-8">
+                        <button class="w-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 py-3 rounded-xl text-sm font-bold hover:bg-emerald-100 transition-colors">Download PDF Report</button>
+                    </div>
+                </div>
+
+                <!-- Active Prescriptions -->
+                <div class="group bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-50 dark:bg-purple-900/10 rounded-full group-hover:scale-110 transition-transform"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl shadow-inner">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                        </div>
+                        <span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">Action Required</span>
+                    </div>
+                    <h3 class="text-slate-500 dark:text-slate-400 font-bold text-sm mb-1 uppercase tracking-tight">EpiPen® Auto-Injector</h3>
+                    <p class="text-2xl font-heading font-black text-slate-900 dark:text-white mb-2 leading-tight">Refill Needed</p>
+                    <p class="text-sm text-red-500 dark:text-red-400 font-bold flex items-center gap-2"><i class="fas fa-clock"></i> Expires in 30 days</p>
+                    <div class="mt-8">
+                        <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-xl text-sm font-bold shadow-lg shadow-primary-500/30 transition-all transform hover:scale-[1.02] active:scale-95">Request Instant Refill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Treatment Progress (Col span 2) -->
+                <div class="lg:col-span-2 space-y-6">
+                    <h2 class="font-heading text-2xl font-black text-slate-900 dark:text-white">Immunotherapy Progress</h2>
+                    <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-8">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest mb-2">Maintenance Phase</span>
+                                <h3 class="text-2xl font-heading font-black text-slate-900 dark:text-white">Targeting: Dust Mites & Ragweed</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Treatment Plan #AC-88291</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-4xl font-heading font-black text-primary-600 dark:text-primary-400">Month 14</span>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Of 36 Months Total</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium Progress Bar -->
+                        <div class="relative pt-2 pb-8">
+                            <div class="flex mb-4 items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-black inline-block py-1 px-2 uppercase rounded-full text-primary-600 bg-primary-100 dark:bg-primary-900/30">Current Stage</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs font-black inline-block text-primary-600 dark:text-primary-400">45% Completed</span>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden h-4 mb-4 text-xs flex rounded-full bg-slate-100 dark:bg-slate-800 shadow-inner">
+                                <div style="width:45%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-primary-400 to-primary-600 relative overflow-hidden">
+                                     <div class="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)] bg-[length:2rem_2rem] animate-[progress_2s_linear_infinite]"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                <span>Aug 2022</span>
+                                <span>Projected Completion: Aug 2025</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-primary-50/50 dark:bg-slate-800/50 border border-primary-100/50 dark:border-slate-700/50 p-6 rounded-2xl flex items-start gap-4 backdrop-blur-sm">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white mb-1">Doctor's Clinical Insight</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify">"You're showing excellent progress, Sarah. The data indicates a significant reduction in symptom frequency. Consistent maintenance doses are key to long-term desensitization. Keep track of any minor reactions in your symptom log."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="font-heading text-2xl font-black text-slate-900 dark:text-white mb-6">Payments</h2>
+                        <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none text-center relative overflow-hidden">
+                            <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/5 rounded-full"></div>
+                            <div class="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/20 rounded-full flex items-center justify-center mx-auto mb-6 text-emerald-500 text-3xl shadow-inner">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <h3 class="text-xl font-heading font-black text-slate-900 dark:text-white mb-2">No Balance Due</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-8">Your account is fully synchronized with your insurance provider.</p>
+                            <button class="w-full bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 py-4 rounded-2xl font-bold transition-all text-sm border border-slate-200 dark:border-slate-700 shadow-sm" title="View Billing History">
+                                Transaction History
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="font-heading text-2xl font-black text-slate-900 dark:text-white mb-6">Quick Resources</h2>
+                        <div class="bg-white dark:bg-darkCard rounded-3xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-none divide-y divide-slate-100 dark:divide-slate-800">
+                            <a href="education.html" class="group flex items-center justify-between p-5 hover:bg-primary-50/50 dark:hover:bg-slate-800/50 transition-colors" title="View Action Plans">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center transition-transform group-hover:scale-110">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-sm font-bold text-slate-900 dark:text-white">Emergency Action Plans</span>
+                                        <span class="block text-[10px] text-slate-500 uppercase font-black tracking-widest mt-0.5">2 New Updates</span>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-slate-300 group-hover:text-primary-500 transition-colors"></i>
+                            </a>
+                            <a href="#" class="group flex items-center justify-between p-5 hover:bg-primary-50/50 dark:hover:bg-slate-800/50 transition-colors" title="Update Forms">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center transition-transform group-hover:scale-110">
+                                        <i class="fas fa-signature"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-sm font-bold text-slate-900 dark:text-white">Update Consent Forms</span>
+                                        <span class="block text-[10px] text-slate-500 uppercase font-black tracking-widest mt-0.5">Annual Review Required</span>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-slate-300 group-hover:text-primary-500 transition-colors"></i>
+                            </a>
+                            <a href="#" class="group flex items-center justify-between p-5 hover:bg-primary-50/50 dark:hover:bg-slate-800/50 transition-colors" title="Insurance Details">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center transition-transform group-hover:scale-110">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <span class="block text-sm font-bold text-slate-900 dark:text-white">Insurance Integration</span>
+                                        <span class="block text-[10px] text-slate-500 uppercase font-black tracking-widest mt-0.5">Active & Verified</span>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-slate-300 group-hover:text-primary-500 transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+
+            <!-- View Appointments (Placeholder) -->
+            <div id="view-appointments" class="dashboard-view hidden space-y-8">
+                <h2 class="text-3xl font-heading font-black text-slate-900 dark:text-white">My Appointments</h2>
+                <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl overflow-hidden">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Scheduled Visits</h3>
+                        <button class="bg-primary-600 text-white px-6 py-2 rounded-xl font-bold text-sm shadow-lg shadow-primary-500/20 hover:scale-105 transition-transform">+ Schedule New</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+                             <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center text-xl"><i class="fas fa-calendar-check"></i></div>
+                                <div>
+                                    <p class="font-bold text-slate-900 dark:text-white">Immunotherapy Maintenance</p>
+                                    <p class="text-sm text-slate-500">Tomorrow at 10:00 AM • Dr. Jenkins</p>
+                                </div>
+                             </div>
+                             <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-600 text-[10px] font-black uppercase tracking-widest">Confirmed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View Labs (Placeholder) -->
+            <div id="view-labs" class="dashboard-view hidden space-y-8">
+                <h2 class="text-3xl font-heading font-black text-slate-900 dark:text-white">Laboratory Results</h2>
+                <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl">
+                    <p class="text-slate-500 dark:text-slate-400">Access your clinical tests and diagnostic reports here.</p>
+                </div>
+            </div>
+
+            <!-- View Prescriptions (Placeholder) -->
+            <div id="view-prescriptions" class="dashboard-view hidden space-y-8">
+                <h2 class="text-3xl font-heading font-black text-slate-900 dark:text-white">Prescriptions</h2>
+                <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl">
+                    <p class="text-slate-500 dark:text-slate-400">Manage your active medications and refill requests.</p>
+                </div>
+            </div>
+
+            <!-- View Messages (Placeholder) -->
+            <div id="view-messages" class="dashboard-view hidden space-y-8">
+                <h2 class="text-3xl font-heading font-black text-slate-900 dark:text-white">Direct Messaging</h2>
+                <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl">
+                    <p class="text-slate-500 dark:text-slate-400">Communicate securely with your clinical care team.</p>
+                </div>
+            </div>
+
+            <!-- View Billing (Placeholder) -->
+            <div id="view-billing" class="dashboard-view hidden space-y-8">
+                <h2 class="text-3xl font-heading font-black text-slate-900 dark:text-white">Billing & Insurance</h2>
+                <div class="bg-white dark:bg-darkCard rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl">
+                    <p class="text-slate-500 dark:text-slate-400">Review your statements, insurance coverage, and payment history.</p>
+                </div>
+            </div>
+
+            <div class="pb-12"></div>
+        </div>
+    </main>
+
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Specific logic for Dashboard Mobile Sidebar & View Switching
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const overlay = document.getElementById('sidebar-overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const views = document.querySelectorAll('.dashboard-view');
+
+            // Mobile Sidebar Toggle
+            if (sidebarBtn && sidebar && overlay && closeBtn) {
+                const toggleSidebar = () => {
+                    sidebar.classList.toggle('-translate-x-full');
+                    overlay.classList.toggle('hidden');
+                };
+
+                sidebarBtn.addEventListener('click', toggleSidebar);
+                closeBtn.addEventListener('click', toggleSidebar);
+                overlay.addEventListener('click', toggleSidebar);
+            }
+
+            // View Switching Logic
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetViewId = link.getAttribute('data-view');
+                    if (!targetViewId) return;
+
+                    // Update UI Active State
+                    navLinks.forEach(l => {
+                        l.classList.remove('bg-primary-50', 'text-primary-700', 'dark:bg-slate-800', 'dark:text-primary-400');
+                        l.classList.add('text-slate-600', 'dark:text-slate-400');
+                    });
+                    link.classList.add('bg-primary-50', 'text-primary-700', 'dark:bg-slate-800', 'dark:text-primary-400');
+                    link.classList.remove('text-slate-600', 'dark:text-slate-400');
+
+                    // Show Target View
+                    views.forEach(v => v.classList.add('hidden'));
+                    const targetView = document.getElementById(`view-${targetViewId}`);
+                    if (targetView) {
+                        targetView.classList.remove('hidden');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // Close mobile sidebar if open
+                    if (!sidebar.classList.contains('-translate-x-full')) {
+                        sidebar.classList.add('-translate-x-full');
+                        overlay.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
