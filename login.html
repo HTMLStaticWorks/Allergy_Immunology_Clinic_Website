@@ -69,10 +69,9 @@
                     </div>
 
                     <div class="space-y-2">
-                        <div class="flex justify-between items-center ml-1">
+                        <div class="flex items-center ml-1">
                             <label for="password"
                                 class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Password</label>
-                            <a href="#" class="text-xs font-bold text-primary-600 hover:underline">Forgot?</a>
                         </div>
                         <div class="relative">
                             <i class="fas fa-lock absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
@@ -80,6 +79,14 @@
                                 class="w-full pl-12 pr-5 py-3.5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400"
                                 placeholder="••••••••" required>
                         </div>
+                        <div class="flex justify-start ml-1 mt-1">
+                            <a href="#" class="text-xs font-bold text-primary-600 hover:underline">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center ml-1 mt-4">
+                        <input type="checkbox" id="terms-login" class="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
+                        <label for="terms-login" class="ml-2 text-sm font-medium text-slate-700 dark:text-slate-300">I agree to the <a href="#" class="text-primary-600 hover:underline dark:text-primary-500">Terms and Conditions</a></label>
                     </div>
 
                     <div class="pt-4">
@@ -87,6 +94,15 @@
                             class="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-xl shadow-primary-500/30 flex justify-center items-center gap-3 transform hover:scale-[1.02] active:scale-95">
                             Sign In to Portal <i class="fas fa-arrow-right"></i>
                         </button>
+                    </div>
+
+                    <div class="mt-6 flex flex-col items-center">
+                        <span class="text-sm text-slate-500 dark:text-slate-400 mb-4 block">Or sign in with</span>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary-500 hover:text-white transition-colors border border-slate-200 dark:border-slate-700" title="Sign in with Google"><i class="fab fa-google"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition-colors border border-slate-200 dark:border-slate-700" title="Sign in with Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-900 dark:hover:bg-black hover:text-white transition-colors border border-slate-200 dark:border-slate-700" title="Sign in with Apple"><i class="fab fa-apple text-lg"></i></a>
+                        </div>
                     </div>
                 </form>
 
